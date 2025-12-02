@@ -24,6 +24,13 @@ const reviveDates = (project: Project): Project => ({
   }))
 })
 
+// Type for persisted state - subset of ProjectState that gets saved to localStorage
+interface PersistedProjectState {
+  projects: Project[]
+  currentProject: Project | null
+  ganttSettings: GanttSettings
+}
+
 interface ProjectState {
   // Current project state
   currentProject: Project | null
@@ -62,7 +69,7 @@ interface ProjectState {
 
 export const useProjectStore = create<ProjectState>()(
   devtools(
-    persist(
+    persist<ProjectState, [], [], PersistedProjectState>(
       (set, get) => ({
         // Initial state
         currentProject: null,
@@ -411,11 +418,11 @@ export const useProjectStore = create<ProjectState>()(
           }
         },
         // Only persist essential data, not transient UI state like selectedTaskIds
-        partialize: (state) => ({
+        partialize: (state): PersistedProjectState => ({
           projects: state.projects,
           currentProject: state.currentProject,
           ganttSettings: state.ganttSettings
-        } as ProjectState)
+        })
       }
     ),
     { name: 'project-store' }
