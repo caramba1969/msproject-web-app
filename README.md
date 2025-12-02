@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MS Project-like Web Application
 
 A modern, state-of-the-art web application similar to Microsoft Project, built with cutting-edge web technologies for efficient project management and planning.
@@ -234,3 +235,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Built with ❤️ using modern web technologies**
 
 *This application demonstrates best practices in modern React development with TypeScript, state management, and responsive design.*
+=======
+# msproject-web-app
+Modern MS Project-like web application built with React, TypeScript, and Vite. Features Gantt charts, task management, resource allocation, and multiple project views.
+>>>>>>> 233bdc56cdd0d0086dedaea8eb190dcc5e11b1fa
