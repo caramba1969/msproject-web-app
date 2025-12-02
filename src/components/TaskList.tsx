@@ -1,10 +1,9 @@
-import React from 'react'
 import { useProjectStore } from '../store/ProjectStore'
 import { format } from 'date-fns'
 import { CheckCircleIcon, ClockIcon, PlayIcon } from 'lucide-react'
 
 export default function TaskList() {
-  const { currentProject, updateTask } = useProjectStore()
+  const { currentProject } = useProjectStore()
   const tasks = currentProject?.tasks || []
 
   const getStatusIcon = (status: string) => {
