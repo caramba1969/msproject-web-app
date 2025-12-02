@@ -1,4 +1,3 @@
-import React from 'react'
 import { useProjectStore } from '../store/ProjectStore'
 import {
   PlusIcon,

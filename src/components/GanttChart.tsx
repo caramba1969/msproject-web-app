@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useProjectStore } from '../store/ProjectStore'
-import { Task } from '../types'
-import { format, startOfWeek, addDays, differenceInDays, parseISO } from 'date-fns'
+import { format, addDays, differenceInDays } from 'date-fns'
 
 export default function GanttChart() {
   const svgRef = useRef<SVGSVGElement>(null)
@@ -21,7 +20,6 @@ export default function GanttChart() {
 
     const svg = svgRef.current
     const containerWidth = svg.clientWidth || 800
-    const containerHeight = svg.clientHeight || 400
 
     // Clear previous content
     svg.innerHTML = ''
